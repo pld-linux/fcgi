@@ -6,6 +6,7 @@ Release:	1
 License:	distributable
 Group:		Libraries
 Source0:	http://www.fastcgi.com/dist/%{name}-%{version}.tar.gz
+# Source0-md5:	d15060a813b91383a9f3c66faf84867e
 Patch0:		%{name}-no-libs.patch
 URL:		http://www.fastcgi.com/
 BuildRequires:	autoconf
