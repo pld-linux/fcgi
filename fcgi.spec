@@ -55,9 +55,8 @@ cgi-fcgi (bramkê pomiêdzy CGI a FastCGI).
 Summary:	FastCGI development kit
 Summary(pl):	Zestaw dla programistów FastCGI
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Obsoletes:	fastcgi-devkit
-Provides:	fastcgi-devkit = %{version}
 
 %description devel
 This package contains FastCGI Developer's Kit, which is designed to
@@ -74,7 +73,7 @@ Javie.
 Summary:	FastCGI static library
 Summary(pl):	Statyczna biblioteka FastCGI
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 FastCGI static library.
