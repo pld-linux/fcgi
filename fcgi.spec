@@ -84,7 +84,7 @@ Statyczna biblioteka FastCGI.
 %patch -p1
 
 %build
-autoconf
+%{__autoconf}
 %configure \
 	--with-global \
 	--with-nodebug \
