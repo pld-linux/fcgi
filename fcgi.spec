@@ -107,9 +107,6 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/fastcgi
 
 cp -a examples/{Makefile*,*.c} $RPM_BUILD_ROOT%{_examplesdir}/fastcgi
 
-# note *.[13] files are already formatted to plain text :(
-gzip -9nf README LICENSE.TERMS doc/*.[13]
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -118,13 +115,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz doc/*.1.gz
+%doc README LICENSE.TERMS doc/*.1
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%doc doc/*.htm* doc/*.gif doc/fastcgi-* doc/*.3.gz
+%doc doc/*.htm* doc/*.gif doc/fastcgi-* doc/*.3
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
 %{_includedir}
