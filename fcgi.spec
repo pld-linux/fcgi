@@ -38,18 +38,18 @@ FastCGI).
 FastCGI to otwarte rozszerzenie CGI daj±ce wysok± wydajno¶æ dla
 wszystkich aplikacjach internetowych bez obci±¿ania API serwera WWW.
 
-FastCGI zosta³ zaprojektowany "na wierzchu" instniej±cych API
-serwerów. Na przyk³ad, modu³ Apache mod_fastcgi dodaje obs³ugê FastCGI
-do serwera Apache. FastCGI mo¿e byæ u¿ywany, ze zmniejszon±
-funkcjonalno¶ci± i wydajno¶ci±, z dowolnym serwerem obs³uguj±cym CGI.
+FastCGI zosta³ zaprojektowany "na wierzchu" istniej±cych API serwerów. 
+Na przyk³ad, modu³ Apache mod_fastcgi dodaje obs³ugê FastCGI do serwera 
+Apache. FastCGI mo¿e byæ u¿ywany, ze zmniejszon± funkcjonalno¶ci± 
+i wydajno¶ci±, z dowolnym serwerem obs³uguj±cym CGI.
 
 Zestaw Programisty FastCGI jest tak zaprojektowany, by uczyniæ ³atwym
 tworzenie aplikacji FastCGI. Aktualnie wspiera tworzenie aplikacji
 FastCGI w C/C++, Perlu, Tcl i Javie.
 
-Ten pakiet zawiera tylko biblioteki wspó³dzielone u¿ywane przez
-programy stworzone przy u¿yciu FastCGI developer's Kit oraz program
-cgi-fcgi (bramkê pomiêdzy CGI a FastCGI).
+Ten pakiet zawiera tylko biblioteki wspó³dzielone u¿ywane przez programy
+stworzone przy u¿yciu FastCGI developer's Kit oraz program cgi-fcgi 
+(bramkê pomiêdzy CGI a FastCGI).
 
 %package devel
 Summary:	FastCGI development kit
