@@ -9,6 +9,8 @@ Source0:	http://www.fastcgi.com/dist/%{name}-%{version}.tar.gz
 Patch0:		%{name}-no-libs.patch
 URL:		http://www.fastcgi.com/
 BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool >= 2:1.4d-3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_includedir	%{_prefix}/include/fastcgi
@@ -84,7 +86,11 @@ Statyczna biblioteka FastCGI.
 %patch -p1
 
 %build
+# supplied libtool is broken (relink, C++)
+%{__libtoolize}
+%{__aclocal}
 %{__autoconf}
+%{__automake}
 %configure \
 	--with-global \
 	--with-nodebug \
@@ -92,11 +98,6 @@ Statyczna biblioteka FastCGI.
 	--with-notest
 
 %{__make}
-
-# avoid relinking
-cd libfcgi
-sed -e '/^relink_command.*/d' libfcgi++.la > libfcgi++.la.tmp
-mv -f libfcgi++.la.tmp libfcgi++.la
 
 %install
 rm -rf $RPM_BUILD_ROOT
