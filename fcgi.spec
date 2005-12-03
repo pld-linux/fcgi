@@ -2,12 +2,13 @@ Summary:	FastCGI development kit - shared libraries
 Summary(pl):	Zestaw dla programistów FastCGI - biblioteki wspó³dzielone
 Name:		fcgi
 Version:	2.4.0
-Release:	1
+Release:	2
 License:	distributable
 Group:		Libraries
 Source0:	http://www.fastcgi.com/dist/%{name}-%{version}.tar.gz
 # Source0-md5:	d15060a813b91383a9f3c66faf84867e
 Patch0:		%{name}-no-libs.patch
+Patch1:		%{name}-listen-backlog.patch
 URL:		http://www.fastcgi.com/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -83,7 +84,8 @@ Statyczna biblioteka FastCGI.
 
 %prep
 %setup -q
-%patch -p1
+%patch0 -p1
+%patch1 -p1
 
 %build
 # supplied libtool is broken (relink, C++)
@@ -91,6 +93,8 @@ Statyczna biblioteka FastCGI.
 %{__aclocal}
 %{__autoconf}
 %{__automake}
+
+CPPFLAGS="-DLISTEN_BACKLOG=1024"
 %configure \
 	--with-global \
 	--with-nodebug \
@@ -101,12 +105,12 @@ Statyczna biblioteka FastCGI.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_examplesdir}/fastcgi
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-cp -a examples/{Makefile*,*.c} $RPM_BUILD_ROOT%{_examplesdir}/fastcgi
+cp -a examples/{Makefile*,*.c} $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -126,7 +130,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
 %{_includedir}
-%{_examplesdir}/fastcgi
+%{_examplesdir}/%{name}-%{version}
 
 %files static
 %defattr(644,root,root,755)
