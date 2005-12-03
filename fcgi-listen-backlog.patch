@@ -1,0 +1,24 @@
+This patch allows compile time define for listen backlog.
+Defaults to previous behaviour: 5
+
+--- fcgi-2.4.0/cgi-fcgi/cgi-fcgi.c~	2001-09-01 03:14:28.000000000 +0200
++++ fcgi-2.4.0/cgi-fcgi/cgi-fcgi.c	2005-05-09 18:09:17.000000000 +0300
+@@ -52,6 +52,9 @@
+ #include "fastcgi.h"
+ #include "fcgios.h"
+ 
++#ifndef LISTEN_BACKLOG
++#define LISTEN_BACKLOG 5
++#endif
+ 
+ static int wsReadPending = 0;
+ static int fcgiReadPending = 0;
+@@ -514,7 +517,7 @@
+     int listenFd, i;
+ 
+     /* @@@ Should be able to pick up the backlog as an arg */
+-    if((listenFd = OS_CreateLocalIpcFd(bindPath, 5)) == -1) {
++    if((listenFd = OS_CreateLocalIpcFd(bindPath, LISTEN_BACKLOG)) == -1) {
+         exit(OS_Errno);
+     }
+ 
