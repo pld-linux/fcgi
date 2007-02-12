@@ -1,5 +1,5 @@
 Summary:	FastCGI development kit - shared libraries
-Summary(pl.UTF-8):   Zestaw dla programistów FastCGI - biblioteki współdzielone
+Summary(pl.UTF-8):	Zestaw dla programistów FastCGI - biblioteki współdzielone
 Name:		fcgi
 Version:	2.4.0
 Release:	2
@@ -54,7 +54,7 @@ stworzone przy użyciu FastCGI developer's Kit oraz program cgi-fcgi
 
 %package devel
 Summary:	FastCGI development kit
-Summary(pl.UTF-8):   Zestaw dla programistów FastCGI
+Summary(pl.UTF-8):	Zestaw dla programistów FastCGI
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Obsoletes:	fastcgi-devkit
@@ -72,7 +72,7 @@ Javie.
 
 %package static
 Summary:	FastCGI static library
-Summary(pl.UTF-8):   Statyczna biblioteka FastCGI
+Summary(pl.UTF-8):	Statyczna biblioteka FastCGI
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
