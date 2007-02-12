@@ -1,5 +1,5 @@
 Summary:	FastCGI development kit - shared libraries
-Summary(pl):	Zestaw dla programistów FastCGI - biblioteki wspó³dzielone
+Summary(pl.UTF-8):   Zestaw dla programistÃ³w FastCGI - biblioteki wspÃ³Å‚dzielone
 Name:		fcgi
 Version:	2.4.0
 Release:	2
@@ -35,26 +35,26 @@ This package contains only shared libraries used by programs developed
 using FastCGI Developer's Kit and cgi-fcgi (bridge from CGI to
 FastCGI).
 
-%description -l pl
-FastCGI to otwarte rozszerzenie CGI daj±ce wysok± wydajno¶æ dla
-wszystkich aplikacjach internetowych bez obci±¿ania API serwera WWW.
+%description -l pl.UTF-8
+FastCGI to otwarte rozszerzenie CGI dajÄ…ce wysokÄ… wydajnoÅ›Ä‡ dla
+wszystkich aplikacjach internetowych bez obciÄ…Å¼ania API serwera WWW.
 
-FastCGI zosta³ zaprojektowany "na wierzchu" istniej±cych API serwerów.
-Na przyk³ad, modu³ Apache mod_fastcgi dodaje obs³ugê FastCGI do serwera
-Apache. FastCGI mo¿e byæ u¿ywany, ze zmniejszon± funkcjonalno¶ci±
-i wydajno¶ci±, z dowolnym serwerem obs³uguj±cym CGI.
+FastCGI zostaÅ‚ zaprojektowany "na wierzchu" istniejÄ…cych API serwerÃ³w.
+Na przykÅ‚ad, moduÅ‚ Apache mod_fastcgi dodaje obsÅ‚ugÄ™ FastCGI do serwera
+Apache. FastCGI moÅ¼e byÄ‡ uÅ¼ywany, ze zmniejszonÄ… funkcjonalnoÅ›ciÄ…
+i wydajnoÅ›ciÄ…, z dowolnym serwerem obsÅ‚ugujÄ…cym CGI.
 
-Zestaw Programisty FastCGI jest tak zaprojektowany, by uczyniæ ³atwym
+Zestaw Programisty FastCGI jest tak zaprojektowany, by uczyniÄ‡ Å‚atwym
 tworzenie aplikacji FastCGI. Aktualnie wspiera tworzenie aplikacji
 FastCGI w C/C++, Perlu, Tcl i Javie.
 
-Ten pakiet zawiera tylko biblioteki wspó³dzielone u¿ywane przez programy
-stworzone przy u¿yciu FastCGI developer's Kit oraz program cgi-fcgi
-(bramkê pomiêdzy CGI a FastCGI).
+Ten pakiet zawiera tylko biblioteki wspÃ³Å‚dzielone uÅ¼ywane przez programy
+stworzone przy uÅ¼yciu FastCGI developer's Kit oraz program cgi-fcgi
+(bramkÄ™ pomiÄ™dzy CGI a FastCGI).
 
 %package devel
 Summary:	FastCGI development kit
-Summary(pl):	Zestaw dla programistów FastCGI
+Summary(pl.UTF-8):   Zestaw dla programistÃ³w FastCGI
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Obsoletes:	fastcgi-devkit
@@ -64,22 +64,22 @@ This package contains FastCGI Developer's Kit, which is designed to
 make developing FastCGI applications easy. The kit currently supports
 FastCGI applications written in C/C++, Perl, Tcl, and Java.
 
-%description devel -l pl
-Ten pakiet zawiera Zestaw Programisty FastCGI, który jest tak
-zaprojektowany, by uczyniæ ³atwym tworzenie aplikacji FastCGI.
+%description devel -l pl.UTF-8
+Ten pakiet zawiera Zestaw Programisty FastCGI, ktÃ³ry jest tak
+zaprojektowany, by uczyniÄ‡ Å‚atwym tworzenie aplikacji FastCGI.
 Aktualnie wspiera tworzenie aplikacji FastCGI w C/C++, Perlu, Tcl i
 Javie.
 
 %package static
 Summary:	FastCGI static library
-Summary(pl):	Statyczna biblioteka FastCGI
+Summary(pl.UTF-8):   Statyczna biblioteka FastCGI
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 FastCGI static library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka FastCGI.
 
 %prep
