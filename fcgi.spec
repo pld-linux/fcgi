@@ -9,6 +9,7 @@ Source0:	http://www.fastcgi.com/dist/%{name}-%{version}.tar.gz
 # Source0-md5:	d15060a813b91383a9f3c66faf84867e
 Patch0:		%{name}-no-libs.patch
 Patch1:		%{name}-listen-backlog.patch
+Patch2:		%{name}-includes.patch
 URL:		http://www.fastcgi.com/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -86,6 +87,7 @@ Statyczna biblioteka FastCGI.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 # supplied libtool is broken (relink, C++)
@@ -97,11 +99,12 @@ Statyczna biblioteka FastCGI.
 CPPFLAGS="-DLISTEN_BACKLOG=1024"
 %configure \
 	--with-global \
-	--with-nodebug \
 	--with-noassert \
+	--with-nodebug \
 	--with-notest
 
-%{__make}
+# parallel build broken: library is searched before it's built
+%{__make} -j1
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -121,17 +124,23 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README LICENSE.TERMS doc/*.1
-%attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%attr(755,root,root) %{_bindir}/cgi-fcgi
+%attr(755,root,root) %{_libdir}/libfcgi.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libfcgi.so.0
+%attr(755,root,root) %{_libdir}/libfcgi++.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libfcgi++.so.0
 
 %files devel
 %defattr(644,root,root,755)
 %doc doc/*.htm* doc/*.gif doc/fastcgi-* doc/*.3
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
+%attr(755,root,root) %{_libdir}/libfcgi.so
+%attr(755,root,root) %{_libdir}/libfcgi++.so
+%{_libdir}/libfcgi.la
+%{_libdir}/libfcgi++.la
 %{_includedir}
 %{_examplesdir}/%{name}-%{version}
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libfcgi.a
+%{_libdir}/libfcgi++.a

@@ -1,0 +1,10 @@
+--- fcgi-2.4.0/libfcgi/fcgio.cpp.orig	2002-02-24 21:12:22.000000000 +0100
++++ fcgi-2.4.0/libfcgi/fcgio.cpp	2012-01-21 14:56:28.110884937 +0100
+@@ -23,6 +23,7 @@
+ #endif
+ 
+ #include <limits.h>
++#include <stdio.h>
+ #include "fcgio.h"
+ 
+ using std::streambuf;
