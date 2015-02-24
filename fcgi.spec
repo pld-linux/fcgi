@@ -2,7 +2,7 @@ Summary:	FastCGI development kit - shared libraries
 Summary(pl.UTF-8):	Zestaw dla programistów FastCGI - biblioteki współdzielone
 Name:		fcgi
 Version:	2.4.0
-Release:	3
+Release:	4
 License:	distributable
 Group:		Libraries
 Source0:	http://www.fastcgi.com/dist/%{name}-%{version}.tar.gz
